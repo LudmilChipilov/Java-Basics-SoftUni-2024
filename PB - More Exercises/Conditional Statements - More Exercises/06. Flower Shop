@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class FlowerShop
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num1 = Integer.parseInt(scanner.nextLine());
+        int num2 = Integer.parseInt(scanner.nextLine());
+        int num3 = Integer.parseInt(scanner.nextLine());
+        int num4 = Integer.parseInt(scanner.nextLine());
+        double price = Double.parseDouble(scanner.nextLine());
+        double totalSum = (num1*3.25 + num2*4 + num3*3.5 + num4*8)*0.95;
+        if(totalSum >= price)
+        {
+            int result = (int)Math.floor(totalSum - price);
+            System.out.printf("She is left with %d leva.", result);
+        }
+        else
+        {
+            int result = (int)Math.ceil(price - totalSum);
+            System.out.printf("She will have to borrow %d leva.", result);
+        }
+    }
+}
