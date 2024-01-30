@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.lang.Integer;
+import java.lang.Math;
+public class EqualPairs
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        int maxDiff = Integer.MIN_VALUE;
+
+        int sum = 0;
+        for(int i = 1; i <= n; i++)
+        {
+
+            int num1 = Integer.parseInt(scanner.nextLine());
+            int num2 = Integer.parseInt(scanner.nextLine());
+            int diff = 0;
+            if(i == 1)
+            {
+                sum = num1 + num2;
+                continue;
+            }
+            if(sum == num1 + num2)
+            {
+                continue;
+            }
+            if(sum != num1 + num2)
+            {
+                diff = Math.abs(sum - (num1 + num2));
+            }
+            if(diff > maxDiff)
+            {
+                maxDiff = diff;
+            }
+            sum = num1 + num2;
+        }
+        if(maxDiff == Integer.MIN_VALUE)
+        {
+            System.out.printf("Yes, value=%d", sum);
+        }
+        else
+        {
+            System.out.printf("No, maxdiff=%d", maxDiff);
+        }
+    }
+}
