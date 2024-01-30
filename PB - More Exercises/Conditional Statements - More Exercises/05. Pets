@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Pets
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int days = Integer.parseInt(scanner.nextLine());
+        int foodKg = Integer.parseInt(scanner.nextLine());
+        double dog = Double.parseDouble(scanner.nextLine());
+        double cat = Double.parseDouble(scanner.nextLine());
+        double tortoise = Double.parseDouble(scanner.nextLine());
+        double foodNeeded = days*(dog + cat + tortoise/1000);
+        if(foodKg >= foodNeeded)
+        {
+            int result = (int)Math.floor(foodKg - foodNeeded);
+            System.out.printf("%d kilos of food left.", result);
+        }
+        else
+        {
+            int result = (int)Math.ceil(foodNeeded - foodKg);
+            System.out.printf("%d more kilos of food are needed.", result);
+        }
+    }
+}
