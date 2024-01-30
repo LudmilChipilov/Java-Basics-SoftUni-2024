@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class FuelTankPart2
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        String type = scanner.nextLine();
+        double fuel = Double.parseDouble(scanner.nextLine());
+        String input = scanner.nextLine();
+        double result = 0;
+        if(type.equals("Gas"))
+        {
+            if(input.equals("Yes"))
+            {
+                 result = 0.85*fuel;
+            }
+            if(input.equals("No"))
+            {
+                result = 0.93*fuel;
+            }
+
+        }
+        if(type.equals("Gasoline"))
+        {
+            if(input.equals("Yes"))
+            {
+                result = 2.04*fuel;
+            }
+            if(input.equals("No"))
+            {
+                result = 2.22*fuel;
+            }
+        }
+        if(type.equals("Diesel"))
+        {
+            if(input.equals("Yes"))
+            {
+                result = 2.21*fuel;
+            }
+            if(input.equals("No"))
+            {
+                result = 2.33*fuel;
+            }
+
+        }
+        if(fuel >= 20 && fuel <= 25)
+        {
+            result *= 0.92;
+        }
+        if(fuel > 25)
+        {
+            result *= 0.9;
+        }
+        System.out.printf("%.2f lv.", result);
+    }
+}
