@@ -1,0 +1,85 @@
+import java.util.Scanner;
+public class StreamOfLetters
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        int countC = 0;
+        int countO = 0;
+        int countN = 0;
+        int countCON = 0;
+        java.lang.String word = "";
+        while(!input.equals("End"))
+        {
+            char c = input.charAt(0);
+            if(c < 65 || (c > 90 && c < 97) || c > 122)
+            {
+                input = scanner.nextLine();
+                continue;
+            }
+            if(input.equals("c"))
+            {
+                if(countC == 0)
+                {
+                    countC++;
+                    countCON++;
+                    if(countCON < 3)
+                    {
+                        input = scanner.nextLine();
+                        continue;
+                    }
+
+                }
+
+            }
+            if(input.equals("o"))
+            {
+                if(countO == 0)
+                {
+                    countO++;
+                    countCON++;
+                    if(countCON < 3)
+                    {
+                        input = scanner.nextLine();
+                        continue;
+                    }
+                }
+
+            }
+            if(input.equals("n"))
+            {
+                if(countN == 0)
+                {
+                    countN++;
+                    countCON++;
+                    if(countCON < 3)
+                    {
+                        input = scanner.nextLine();
+                        continue;
+                    }
+                }
+
+            }
+
+            if(countCON == 3)
+            {
+                System.out.printf("%s ", word);
+                countC = 0;
+                countO = 0;
+                countN = 0;
+                countCON = 0;
+                word = "";
+                input = scanner.nextLine();
+                continue;
+            }
+            word = word.concat(input);
+            input = scanner.nextLine();
+        }
+        if(input.equals("End"))
+        {
+            return;
+        }
+    }
+}
