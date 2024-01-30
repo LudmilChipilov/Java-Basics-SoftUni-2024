@@ -1,0 +1,81 @@
+import java.util.Scanner;
+import java.lang.Double;
+public class OddEvenPosition
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        double oddSum = 0;
+        double evenSum = 0;
+        double minOdd = Double.MAX_VALUE;
+        double minEven = Double.MAX_VALUE;
+        double maxOdd = -Double.MAX_VALUE;
+        double maxEven = -Double.MAX_VALUE;;
+        for (int i = 1; i <= n; i++)
+        {
+            double number = Double.parseDouble(scanner.nextLine());
+
+            if (i % 2 != 0)
+            {
+                oddSum += number;
+                if (number > maxOdd)
+                {
+                    maxOdd = number;
+                }
+
+                if (number < minOdd)
+                {
+                    minOdd = number;
+                }
+            }
+            else
+            {
+                evenSum += number;
+                if (number > maxEven)
+                {
+                    maxEven = number;
+                }
+                if (number < minEven)
+                {
+                    minEven = number;
+                }
+            }
+
+        }
+        System.out.printf("OddSum=%.2f,%n", oddSum);
+        if(minOdd != Double.MAX_VALUE)
+        {
+            System.out.printf("OddMin=%.2f,%n", minOdd);
+        }
+        if(minOdd == Double.MAX_VALUE)
+        {
+            System.out.println("OddMin=No,");
+        }
+        if(maxOdd != -Double.MAX_VALUE)
+        {
+            System.out.printf("OddMax=%.2f,%n", maxOdd);
+        }
+        if(maxOdd == -Double.MAX_VALUE)
+        {
+            System.out.println("OddMax=No,");
+        }
+        System.out.printf("EvenSum=%.2f,%n", evenSum);
+        if(minEven != Double.MAX_VALUE)
+        {
+            System.out.printf("EvenMin=%.2f,%n", minEven);
+        }
+        if(minEven == Double.MAX_VALUE)
+        {
+            System.out.println("EvenMin=No,");
+        }
+        if(maxEven != -Double.MAX_VALUE)
+        {
+            System.out.printf("EvenMax=%.2f%n", maxEven);
+        }
+        if(maxEven == -Double.MAX_VALUE)
+        {
+            System.out.println("EvenMax=No");
+        }
+    }
+}
