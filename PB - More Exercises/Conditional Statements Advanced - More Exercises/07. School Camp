@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class SchoolCamp
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        String season = scanner.nextLine();
+        String type = scanner.nextLine();
+        int numStudents = Integer.parseInt(scanner.nextLine());
+        int numSleeping = Integer.parseInt(scanner.nextLine());
+        java.lang.String typeSport = "";
+        double sum = 0;
+        if("Winter".equals(season))
+        {
+            if("boys".equals(type) || "girls".equals(type))
+            {
+                sum = numStudents*9.6*numSleeping;
+                if("boys".equals(type))
+                {
+                    typeSport = "Judo";
+                }
+                if("girls".equals(type))
+                {
+                    typeSport = "Gymnastics";
+                }
+            }
+            if("mixed".equals(type))
+            {
+                sum = numStudents*10*numSleeping;
+                typeSport = "Ski";
+            }
+        }
+        if("Spring".equals(season))
+        {
+            if("boys".equals(type) || "girls".equals(type))
+            {
+                sum = numStudents*7.2*numSleeping;
+                if("boys".equals(type))
+                {
+                    typeSport = "Tennis";
+                }
+                if("girls".equals(type))
+                {
+                    typeSport = "Athletics";
+                }
+            }
+            if("mixed".equals(type))
+            {
+                sum = numStudents*9.50*numSleeping;
+                typeSport = "Cycling";
+            }
+        }
+        if("Summer".equals(season))
+        {
+            if("boys".equals(type) || "girls".equals(type))
+            {
+                sum = numStudents*15*numSleeping;
+                if("boys".equals(type))
+                {
+                    typeSport = "Football";
+                }
+                if("girls".equals(type))
+                {
+                    typeSport = "Volleyball";
+                }
+            }
+            if("mixed".equals(type))
+            {
+                sum = numStudents*20*numSleeping;
+                typeSport = "Swimming";
+            }
+        }
+        if(numStudents >= 50)
+        {
+            sum *= 0.5;
+        }
+        if(numStudents >= 20 && numStudents < 50)
+        {
+            sum *= 0.85;
+        }
+        if(numStudents >= 10 && numStudents < 20)
+        {
+            sum *= 0.95;
+        }
+        System.out.printf("%s %.2f lv.", typeSport, sum);
+    }
+}
