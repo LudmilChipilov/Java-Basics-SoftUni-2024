@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class CarToGo
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        String season = scanner.nextLine();
+        double price = 0;
+        java.lang.String classCar = "";
+        java.lang.String typeCar = "";
+        if(budget <= 100)
+        {
+            classCar = "Economy class";
+            if("Summer".equals(season))
+            {
+                typeCar = "Cabrio";
+                price = 0.35*budget;
+            }
+            if("Winter".equals(season))
+            {
+                typeCar = "Jeep";
+                price = 0.65*budget;
+            }
+        }
+        if(budget > 100 && budget <= 500)
+        {
+            classCar = "Compact class";
+            if("Summer".equals(season))
+            {
+                typeCar = "Cabrio";
+                price = 0.45*budget;
+            }
+            if("Winter".equals(season))
+            {
+                typeCar = "Jeep";
+                price = 0.80*budget;
+            }
+        }
+        if(budget > 500)
+        {
+            classCar = "Luxury class";
+            typeCar = "Jeep";
+            price = 0.90*budget;
+        }
+        System.out.println(classCar);
+        System.out.printf("%s - %.2f", typeCar, price);
+    }
+}
