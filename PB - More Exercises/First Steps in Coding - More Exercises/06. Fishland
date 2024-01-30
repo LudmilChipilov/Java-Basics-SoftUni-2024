@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Fishland
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double priceMackerel = Double.parseDouble(scanner.nextLine());//скумрия
+        double priceSprat = Double.parseDouble(scanner.nextLine());// цаца
+        double kiloPalamis = Double.parseDouble(scanner.nextLine());//паламуд
+        double kiloScad = Double.parseDouble(scanner.nextLine());//сафрид
+        double kiloMussel = Double.parseDouble(scanner.nextLine());//миди
+        double pricePalamis = 1.6*priceMackerel;
+        double priceScad = 1.8*priceSprat;
+        double priceMussel = 7.50;
+        double totalPrice = kiloPalamis*pricePalamis + priceScad*kiloScad
+                + priceMussel*kiloMussel;
+
+        System.out.printf("%.2f", totalPrice);
+    }
+}
