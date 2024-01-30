@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class BikeRace
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int youngs = Integer.parseInt(scanner.nextLine());
+        int olds = Integer.parseInt(scanner.nextLine());
+        String trace = scanner.nextLine();
+        double sum = 0;
+        if("trail".equals(trace))
+        {
+            sum = youngs*5.50 + olds*7;
+        }
+        if("cross-country".equals(trace))
+        {
+            sum = youngs*8 + olds*9.50;
+        }
+        if("downhill".equals(trace))
+        {
+            sum = youngs*12.25 + olds*13.75;
+        }
+        if("road".equals(trace))
+        {
+            sum = youngs*20 + olds*21.50;
+        }
+        if(youngs + olds >= 50 && "cross-country".equals(trace))
+        {
+            sum *= 0.75;
+        }
+        double expense = 0.05*sum;
+        sum -= expense;
+        System.out.printf("%.2f", sum);
+    }
+}
