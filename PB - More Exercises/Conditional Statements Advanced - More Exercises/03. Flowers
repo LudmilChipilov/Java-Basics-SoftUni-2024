@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Flowers
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int flower1 = Integer.parseInt(scanner.nextLine());
+        int flower2 = Integer.parseInt(scanner.nextLine());
+        int flower3 = Integer.parseInt(scanner.nextLine());
+        String season = scanner.nextLine();
+        String holiday = scanner.nextLine();
+        double sum = 0;
+        if("Spring".equals(season) || "Summer".equals(season))
+        {
+            sum = 2*flower1 + 4.10*flower2 + 2.50*flower3;
+        }
+        if("Autumn".equals(season) || "Winter".equals(season))
+        {
+            sum = 3.75*flower1 + 4.50*flower2 + 4.15*flower3;
+        }
+        if("Y".equals(holiday))
+        {
+            sum *= 1.15;
+        }
+        if("Spring".equals(season) && flower3 > 7)
+        {
+            sum *= 0.95;
+        }
+        if("Winter".equals(season) && flower2 >= 10)
+        {
+            sum *= 0.9;
+        }
+        if(flower1 + flower2 + flower3 > 20)
+        {
+            sum *= 0.8;
+        }
+        sum += 2;
+        System.out.printf("%.2f", sum);
+    }
+}
