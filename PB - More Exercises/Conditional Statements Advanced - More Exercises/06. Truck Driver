@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class TruckDriver
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        String season = scanner.nextLine();
+        double km = Double.parseDouble(scanner.nextLine());
+        double salary = 0;
+        if(km <= 5000)
+        {
+            if("Spring".equals(season) || "Autumn".equals(season))
+            {
+                salary = 0.75*km;
+            }
+            if("Summer".equals(season))
+            {
+                salary = 0.9*km;
+            }
+            if("Winter".equals(season))
+            {
+                salary = 1.05*km;
+            }
+        }
+        if(km > 5000 && km <= 10000)
+        {
+            if("Spring".equals(season) || "Autumn".equals(season))
+            {
+                salary = 0.95*km;
+            }
+            if("Summer".equals(season))
+            {
+                salary = 1.1*km;
+            }
+            if("Winter".equals(season))
+            {
+                salary = 1.25*km;
+            }
+        }
+        if(km > 10000 && km <= 20000)
+        {
+            salary = 1.45*km;
+        }
+        double totalSalary = salary*4*0.9;
+        System.out.printf("%.2f", totalSalary);
+    }
+}
