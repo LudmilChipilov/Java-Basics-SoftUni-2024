@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class FootballLeague
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int capacity = Integer.parseInt(scanner.nextLine());
+        int numFans = Integer.parseInt(scanner.nextLine());
+        int secA = 0;
+        int secB = 0;
+        int secV = 0;
+        int secG = 0;
+        for(int i = 1; i <= numFans; i++)
+        {
+            String text = scanner.nextLine();
+            if("A".equals(text))
+            {
+                secA++;
+            }
+            else if("B".equals(text))
+            {
+                secB++;
+            }
+            else if("V".equals(text))
+            {
+                secV++;
+            }
+            else if("G".equals(text))
+            {
+                secG++;
+            }
+        }
+        System.out.printf("%.2f", (double)secA*100.0/numFans);
+        System.out.println("%");
+        System.out.printf("%.2f", (double)secB*100.0/numFans);
+        System.out.println("%");
+        System.out.printf("%.2f", (double)secV*100.0/numFans);
+        System.out.println("%");
+        System.out.printf("%.2f", (double)secG*100.0/numFans);
+        System.out.println("%");
+        System.out.printf("%.2f", (double)numFans*100.0/capacity);
+        System.out.println("%");
+    }
+}
