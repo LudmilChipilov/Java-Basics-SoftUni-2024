@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class PipesInPool
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double v = Double.parseDouble(scanner.nextLine());
+        double p1 = Double.parseDouble(scanner.nextLine());
+        double p2 = Double.parseDouble(scanner.nextLine());
+        double h = Double.parseDouble(scanner.nextLine());
+        double totalP1P2 = (p1 + p2) * h;
+        if(totalP1P2 > (double)v)
+        {
+            double extra = totalP1P2 - (double)v;
+            System.out.printf("For %.2f hours the pool overflows with %.2f liters.", h, extra);
+        }
+        else
+        {
+            double extra = (double)v - totalP1P2;
+            double pool = (totalP1P2 * 100.0) / v;
+            double percentP1 = (p1*h*100.0) / totalP1P2;
+            double percentP2 = (p2*h*100.0) / totalP1P2;
+            System.out.printf("The pool is %.2f", pool);
+            System.out.print("%");
+            System.out.printf(" full. Pipe 1: %.2f", percentP1);
+            System.out.print("%");
+            System.out.printf(". Pipe 2: %.2f", percentP2);
+            System.out.print("%.");
+        }
+    }
+}
