@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Logistics
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        int totalPrice = 0;
+        int totalTonnage = 0;
+        int tonnageBus = 0;
+        int tonnageTruck = 0;
+        int tonnageTrain = 0;
+
+        for(int i = 1; i <= n; i++)
+        {
+            int tonnage = Integer.parseInt(scanner.nextLine());
+            if(tonnage <= 3)
+            {
+                tonnageBus += tonnage;
+                totalPrice += tonnage*200;
+                totalTonnage += tonnage;
+            }
+            if(tonnage >= 4 && tonnage <= 11)
+            {
+                tonnageTruck += tonnage;
+                totalPrice += tonnage*175;
+                totalTonnage += tonnage;
+            }
+            if(tonnage >= 12)
+            {
+                tonnageTrain += tonnage;
+                totalPrice += tonnage*120;
+                totalTonnage += tonnage;
+            }
+        }
+        System.out.printf("%.2f%n", (double)(totalPrice*1.0/totalTonnage));
+        System.out.printf("%.2f", (double)(tonnageBus*100.0/totalTonnage));
+        System.out.println("%");
+        System.out.printf("%.2f", (double)(tonnageTruck*100.0/totalTonnage));
+        System.out.println("%");
+        System.out.printf("%.2f", (double)(tonnageTrain*100.0/totalTonnage));
+        System.out.println("%");
+    }
+}
