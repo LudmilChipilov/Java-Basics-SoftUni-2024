@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class MatchTickets
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        String category = scanner.nextLine();
+        int numPeoples = Integer.parseInt(scanner.nextLine());
+        double rest = 0;
+        double price = 0;
+        if(numPeoples >= 1 && numPeoples <= 4)
+        {
+            rest = 0.25*budget;
+        }
+        if(numPeoples > 4 && numPeoples < 10)
+        {
+            rest = 0.4*budget;
+        }
+        if(numPeoples > 9 && numPeoples < 25)
+        {
+            rest = 0.5*budget;
+        }
+        if(numPeoples > 24 && numPeoples < 50)
+        {
+            rest = 0.6*budget;
+        }
+        if(numPeoples > 49)
+        {
+            rest = 0.75*budget;
+        }
+        if("VIP".equals(category))
+        {
+            price = numPeoples*499.99;
+        }
+        if("Normal".equals(category))
+        {
+            price = numPeoples*249.99;
+        }
+        if(rest >= price)
+        {
+            System.out.printf("Yes! You have %.2f leva left.", rest - price);
+        }
+        if(price > rest)
+        {
+            System.out.printf("Not enough money! You need %.2f leva.", price - rest);
+        }
+    }
+}
