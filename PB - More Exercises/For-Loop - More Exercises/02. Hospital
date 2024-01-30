@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.lang.Math;
+public class Hospital
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int period = Integer.parseInt(scanner.nextLine());
+        int noTrated = 0;
+        int treated = 0;
+        int numDoctors = 7;
+        for(int i = 1; i <= period; i++)
+        {
+            int patients = Integer.parseInt(scanner.nextLine());
+            if(i % 3 == 0)
+            {
+                if(noTrated > treated)
+                {
+                    numDoctors++;
+                }
+            }
+            if(patients <= numDoctors)
+            {
+                treated += patients;
+            }
+            if(patients > numDoctors)
+            {
+                treated += numDoctors;
+                noTrated += patients - numDoctors;
+            }
+
+
+        }
+        System.out.printf("Treated patients: %d.%n", treated);
+        System.out.printf("Untreated patients: %d.", noTrated);
+    }
+}
