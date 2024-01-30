@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class TrapeziodArea
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        double bigBase = Double.parseDouble(scanner.nextLine());
+        double littleBase = Double.parseDouble(scanner.nextLine());
+        double hight = Double.parseDouble(scanner.nextLine());
+        double area = (bigBase + littleBase)*hight*0.5;
+        System.out.printf("%.2f", area);
+    }
+}
