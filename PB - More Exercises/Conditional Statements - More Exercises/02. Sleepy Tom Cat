@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class SleepyTomCat
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double daysToRepose = Double.parseDouble(scanner.nextLine());
+        double minutesPlayRepose = daysToRepose * 127;
+        double minutesPlayWorking = (365 - daysToRepose) * 63;
+        double totalMinutesPlay = minutesPlayRepose + minutesPlayWorking;
+
+        if(totalMinutesPlay > 30000)
+        {
+           double differece = totalMinutesPlay - 30000;
+           int hours = (int)differece / 60;
+           int minutes = (int)differece % 60;
+            System.out.println("Tom will run away");
+            System.out.printf("%d hours and %d minutes more for play", hours, minutes);
+        }
+        else
+        {
+            double differece = 30000 - totalMinutesPlay;
+            int hours = (int)differece / 60;
+            int minutes = (int)differece % 60;
+            System.out.println("Tom sleeps well");
+            System.out.printf("%d hours and %d minutes less for play", hours, minutes);
+        }
+    }
+}
