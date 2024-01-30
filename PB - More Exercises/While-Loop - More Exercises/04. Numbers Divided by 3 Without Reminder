@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class NumbersDividedby3WithoutReminder
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int counter = 0;
+        while(true)
+        {
+            counter++;
+            if(counter > 100)
+            {
+                return;
+            }
+            if(counter % 3 == 0)
+            {
+                System.out.println(counter);
+            }
+        }
+    }
+}
