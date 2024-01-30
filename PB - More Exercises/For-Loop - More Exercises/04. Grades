@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Grades
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int numStud = Integer.parseInt(scanner.nextLine());
+        int stud5To6 =0;
+        int stud4To5 =0;
+        int stud3To4 =0;
+        int stud2To3 =0;
+        double totalGrades = 0;
+        for(int i = 1; i <= numStud; i++)
+        {
+            double grade = Double.parseDouble(scanner.nextLine());
+            totalGrades += grade;
+            if(grade >= 5)
+            {
+                stud5To6++;
+            }
+            if(grade >= 4 && grade < 5)
+            {
+                stud4To5++;
+            }
+            if(grade >= 3 && grade <4)
+            {
+                stud3To4++;
+            }
+            if(grade < 3)
+            {
+                stud2To3++;
+            }
+        }
+        System.out.printf("Top students: %.2f", stud5To6*100.0/numStud);
+        System.out.println("%");
+        System.out.printf("Between 4.00 and 4.99: %.2f", stud4To5*100.0/numStud);
+        System.out.println("%");
+        System.out.printf("Between 3.00 and 3.99: %.2f", stud3To4*100.0/numStud);
+        System.out.println("%");
+        System.out.printf("Fail: %.2f", stud2To3*100.0/numStud);
+        System.out.println("%");
+        System.out.printf("Average: %.2f", totalGrades/(numStud*1.0));
+    }
+}
