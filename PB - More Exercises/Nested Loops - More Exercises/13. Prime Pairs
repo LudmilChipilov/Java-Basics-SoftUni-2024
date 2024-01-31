@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class PrimePairs
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int start1Pair = Integer.parseInt(scanner.nextLine());
+        int start2Pair = Integer.parseInt(scanner.nextLine());
+        int diff1 = Integer.parseInt(scanner.nextLine());
+        int diff2 = Integer.parseInt(scanner.nextLine());
+
+        for(int i = start1Pair; i <= start1Pair + diff1; i++)
+        {
+            for(int j = start2Pair; j <= start2Pair + diff2; j++)
+            {
+                if(i % 2 != 0  && i % 3 != 0 && i % 5 != 0 && i % 7 != 0
+                && j % 2 != 0 && j % 3 != 0 && j % 5 != 0 && j % 7 != 0)
+                {
+                    System.out.printf("%d%d%n", i, j);
+                }
+
+            }
+        }
+    }
+}
