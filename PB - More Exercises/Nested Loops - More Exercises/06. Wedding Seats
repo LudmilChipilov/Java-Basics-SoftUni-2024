@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class WeddingSeats
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        char lastSector = scanner.nextLine().charAt(0);
+        int numRows = Integer.parseInt(scanner.nextLine());
+        int numSeatsOddRows = Integer.parseInt(scanner.nextLine());
+        int counter = 0;
+        for(char i = 'A'; i <= lastSector; i++)
+        {
+            for(int j = 1; j <= numRows; j++)
+            {
+                for(char k = 'a'; k <= 'a' + 1 + numSeatsOddRows; k++)
+                {
+                    if(j % 2 != 0  && k >= 'a' + numSeatsOddRows)
+                    {
+                        continue;
+                    }
+
+                    counter++;
+                    System.out.printf("%c%d%c%n", i, j, k);
+                }
+            }
+            numRows++;
+        }
+        System.out.println(counter);
+    }
+}
