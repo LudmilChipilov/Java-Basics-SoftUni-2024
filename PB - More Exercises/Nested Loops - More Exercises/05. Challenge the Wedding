@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class ChallengetheWedding
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int numMen = Integer.parseInt(scanner.nextLine());
+        int numWomen = Integer.parseInt(scanner.nextLine());
+        int numTables = Integer.parseInt(scanner.nextLine());
+        int counter = 0;
+        for(int i = 1; i <= numMen; i++)
+        {
+            for(int j = 1; j <= numWomen; j++)
+            {
+                counter++;
+                System.out.printf("(%d <-> %d) ", i, j);
+                if(counter == numTables)
+                {
+                    return;
+                }
+            }
+        }
+    }
+}
