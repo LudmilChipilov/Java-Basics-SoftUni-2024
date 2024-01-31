@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class UniquePINCodes
+{
+    public static void main(String[] args)
+    {
+         Scanner scanner = new Scanner(System.in);
+         int upLimit1 = Integer.parseInt(scanner.nextLine());
+         int upLimit2 = Integer.parseInt(scanner.nextLine());
+         int upLimit3 = Integer.parseInt(scanner.nextLine());
+
+         for(int i = 1; i <= upLimit1; i++)
+         {
+             for(int j = 1; j <= upLimit2; j++)
+             {
+                 for(int k = 1; k <= upLimit3; k++)
+                 {
+                     if(i % 2 == 0 && k % 2 == 0
+                     && (j == 2 || j == 3 || j == 5 || j == 7))
+                     {
+                         System.out.printf("%d %d %d%n", i, j, k);
+                     }
+                 }
+             }
+         }
+    }
+}
