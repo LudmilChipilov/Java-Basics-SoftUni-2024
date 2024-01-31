@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class LettersCombinations
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        char n1 = scanner.nextLine().charAt(0);
+        char n2 = scanner.nextLine().charAt(0);
+        char n3 = scanner.nextLine().charAt(0);
+        int counter = 0;
+        for(char i = n1; i <= n2; i++)
+        {
+
+            for(char j = n1; j <= n2; j++)
+            {
+
+                for(char k = n1; k <= n2; k++)
+                {
+                    if(i == n3 || j == n3 || k == n3)
+                    {
+                        continue;
+                    }
+                    counter++;
+                    System.out.printf("%c%c%c ", i, j, k);
+
+                }
+
+            }
+        }
+        System.out.printf("%d", counter);
+    }
+}
